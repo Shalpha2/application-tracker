@@ -32,13 +32,9 @@ export default function ApplicationList({ applications, setApplications, search,
   return (
     <div className="row mt-4">
       <SearchBar search={search} setSearch={setSearch} />
+      
 
-      {filteredApps.length === 0 && (
-        <p className="text-muted">No applications added yet.</p>
-      )}
-
-      {filteredApps.length > 0 &&
-        filteredApps.map((app) => (
+       { filteredApps.map((app) => (
           <div key={app.id} className="col-md-4 mb-4">
             <div className="card shadow-sm">
               <div className="card-body">
