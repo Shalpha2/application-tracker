@@ -25,18 +25,15 @@ notes: "Technical interview scheduled for Monday"
   }
   ]);
 
-  function handleFormSubmit(newApplication) {
-    setApplications([...applications, newApplication]);
-  }
 
   return (
     <div className="container mt-4">
       <h1 className="text-center mb-4">Job Application Tracker</h1>
       <div className="row">
-        <ApplicationForm onFormSubmit={handleFormSubmit} />
+        <ApplicationForm setApplications={setApplications} />
         <div className="col">
           <h2 className="mb-3">Saved Applications</h2>
-          <ApplicationList applications={applications} />
+          <ApplicationList applications={applications} setApplications={setApplications} />
         </div>
       </div>
     </div>

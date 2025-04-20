@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ApplicationForm({ onFormSubmit }) {
+export default function ApplicationForm({ setApplications }) {
   const [formData, setFormData] = useState({
     title: '',
     company: '',
@@ -18,14 +18,7 @@ export default function ApplicationForm({ onFormSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    
-    const newApplication = {
-      ...formData,
-      id: Date.now()
-    };
-
-    onFormSubmit(newApplication);
-
+    setApplications((prev) => [...prev, formData]);
 
     setFormData({
       title: '',
