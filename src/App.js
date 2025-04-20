@@ -4,8 +4,9 @@ import ApplicationForm from './components/ApplicationForm';
 import ApplicationList from './components/ApplicationList';
 import { useState , useEffect} from 'react';
 function App() {
+ 
   const [applications, setApplications] = useState([]);
-
+  const [search, setSearch] = useState("");
   async function getApplications() {
     try {
       const response = await fetch("http://localhost:3000/applications");
@@ -28,7 +29,10 @@ function App() {
         <ApplicationForm setApplications={setApplications} />
         <div className="col">
           <h2 className="mb-3">Saved Applications</h2>
-          <ApplicationList applications={applications} setApplications={setApplications} />
+          <ApplicationList applications={applications} 
+          setApplications={setApplications}
+           search={search}  
+           setSearch={setSearch}/>
         </div>
       </div>
     </div>
