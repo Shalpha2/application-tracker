@@ -1,6 +1,28 @@
 import React from 'react';
 
-export default function ApplicationList({ applications }) {
+export default function ApplicationList({ applications,setApplications }) {
+    async function handleRemove(id) {
+        try{
+          const removedApplications = await fetch(
+            `http://localhost:3000/applications/${id}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+            }
+          );
+          const data = await removedApplications.json();
+          setApplications((prev) =>
+            prev.filter((application) => application.id !== data.id)
+          );
+        }catch(error){
+          throw new Error(error)
+        }
+      }
+    
+    
   return (
     <div className="row mt-4">
       {applications.length === 0 ? (
@@ -20,6 +42,12 @@ export default function ApplicationList({ applications }) {
                     </>
                   )}
                 </p>
+                <button
+                  className="btn btn-sm btn-outline-danger mt-2"
+                  onClick={() => handleRemove(app.id)}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </div>

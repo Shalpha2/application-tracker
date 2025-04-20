@@ -2,29 +2,24 @@
 import './App.css';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationList from './components/ApplicationList';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 function App() {
-  const [applications, setApplications] = useState([
-    {
-title : "Sofware Engineer",
-company: "Microsoft",
-status : "Applied",
-notes : "Sent application via Linkedln"
-    },
-  {
-title : "Full stack Developer",
-company: "DevSolutions",
-status: "Interview",
-notes: "Technical interview scheduled for Monday"
-  },
-  {
-    title : "Data Analyst",
-    company: "DataWitz",
-    status: "Rejected",
-    notes: "Get rejection email last friday" 
-  }
-  ]);
+  const [applications, setApplications] = useState([]);
 
+  async function getApplications() {
+    try {
+      const response = await fetch("http://localhost:3000/applications");
+      const data = await response.json();
+      setApplications(data);
+    } catch (error) {
+      throw new Error(error);
+    } finally {
+    }
+  }
+
+  useEffect(() => {
+    getApplications();
+  }, []);
 
   return (
     <div className="container mt-4">

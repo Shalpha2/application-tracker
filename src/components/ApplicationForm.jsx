@@ -8,25 +8,41 @@ export default function ApplicationForm({ setApplications }) {
     notes: ''
   });
 
-  function handleOnChange(event) {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    });
-  }
+
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    setApplications((prev) => [...prev, formData]);
+    setFormData((prev) => {
+        return { ...prev };
+    })       
 
-    setFormData({
-      title: '',
-      company: '',
-      status: 'Applied',
-      notes: ''
-    });
+    setApplications((prev) => [...prev, formData]);
+    postApplication(formData);
+
   }
+
+  const postApplication = async (application) => {
+    try {
+      return await fetch("http://localhost:3000/applications", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(application),
+      });
+    } catch (error) {
+      throw new Error(error)
+    }
+  };
+
+  const handleOnChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   return (
     <div className="col-3 mx-2">
