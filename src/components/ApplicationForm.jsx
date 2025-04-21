@@ -13,10 +13,6 @@ export default function ApplicationForm({ setApplications }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    setFormData((prev) => {
-        return { ...prev };
-    })       
-
     setApplications((prev) => [...prev, formData]);
     postApplication(formData);
 
