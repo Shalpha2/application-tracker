@@ -1,6 +1,7 @@
 import './App.css';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationList from './components/ApplicationList';
+import NavBar from "./components/NavBar";
 import { useState , useEffect} from 'react';
 function App() {
  
@@ -13,6 +14,7 @@ function App() {
       setApplications(data);
     } catch (error) {
       throw new Error(error);
+    } finally {
     }
   }
 
@@ -22,6 +24,7 @@ function App() {
 
   return (
     <div className="container mt-4">
+      <NavBar/>
       <h1 className="text-center mb-4">Job Application Tracker</h1>
       <div className="row">
         <ApplicationForm setApplications={setApplications} />
