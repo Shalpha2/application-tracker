@@ -14,8 +14,7 @@ function App() {
       setApplications(data);
     } catch (error) {
       throw new Error(error);
-    } finally {
-    }
+    } 
   }
 
   useEffect(() => {

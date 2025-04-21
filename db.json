@@ -1,53 +1,46 @@
 {
   "applications": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Frontend Developer",
       "company": "Meta",
       "status": "Interview",
       "notes": "Had first round, waiting for feedback."
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Backend Engineer",
       "company": "Amazon",
       "status": "Applied",
       "notes": "Applied via LinkedIn. No response yet."
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Full Stack Developer",
       "company": "Netflix",
       "status": "Offer",
       "notes": "Received offer, considering salary and benefits."
     },
     {
-      "id": "4",
+      "id": 4,
       "title": "Mobile Developer",
       "company": "Spotify",
       "status": "Rejected",
       "notes": "Got a rejection email. Will reapply later."
     },
     {
-      "id": "5",
+      "id": 5,
       "title": "DevOps Engineer",
       "company": "Cloudflare",
       "status": "Interview",
       "notes": "Panel interview scheduled next week."
     },
     {
-      "id": "160c",
-      "title": "Hardware engineer ",
-      "company": "Hios",
-      "status": "Offer",
-      "notes": "Due to lack of cv"
-    },
-    {
-      "id": "031c",
-      "title": "Nursing",
-      "company": "Kenyatta hospital",
-      "status": "Interview",
-      "notes": ""
+      "id": 6,
+      "title": "Software Engineer",
+      "company": "Tesla",
+      "status": "Applied",
+      "notes": "Application submitted via referral."
     }
   ]
 }
