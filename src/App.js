@@ -1,4 +1,3 @@
-
 import './App.css';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationList from './components/ApplicationList';
@@ -14,7 +13,6 @@ function App() {
       setApplications(data);
     } catch (error) {
       throw new Error(error);
-    } finally {
     }
   }
 

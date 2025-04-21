@@ -40,10 +40,12 @@ export default function ApplicationList({ applications, setApplications, search,
   }
 
   const filteredApps = applications.filter((app) =>
-    app.title.toLowerCase().includes(search.toLowerCase()) ||
-    app.company.toLowerCase().includes(search.toLowerCase()) ||
-    app.status.toLowerCase().includes(search.toLowerCase())
+    (app.title?.toLowerCase().includes(search.toLowerCase()) || 
+     app.company?.toLowerCase().includes(search.toLowerCase()) ||
+     app.status?.toLowerCase().includes(search.toLowerCase()))
   );
+  
+  
 
   const handleEditClick = (app) => {
     setEditId(app.id);
@@ -119,5 +121,3 @@ export default function ApplicationList({ applications, setApplications, search,
     </div>
   );
 }
-
-

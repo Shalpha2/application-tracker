@@ -41,6 +41,20 @@
       "company": "Hios",
       "status": "Offer",
       "notes": "Due to lack of cv"
+    },
+    {
+      "id": "84d6",
+      "jobTitle": "Elecrical engineer",
+      "companyName": "Kplc",
+      "status": "interview",
+      "notes": "taking interview on Friday"
+    },
+    {
+      "id": "762f",
+      "jobTitle": "Elecrical engineer",
+      "companyName": "Kplc",
+      "status": "interview",
+      "notes": ""
     }
   ]
 }
