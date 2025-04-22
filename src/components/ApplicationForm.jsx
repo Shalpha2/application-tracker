@@ -8,16 +8,25 @@ export default function ApplicationForm({ setApplications }) {
     notes: ''
   });
 
-
-
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-
-    setApplications((prev) => [...prev, formData]);
-    postApplication(formData);
-
+  
+    try {
+      const response = await postApplication(formData);
+      const newApp = await response.json(); // Get the newly created application with id
+      setApplications((prev) => [...prev, newApp]);
+  
+      setFormData({
+        title: '',
+        company: '',
+        status: 'Applied',
+        notes: ''
+      });
+    } catch (error) {
+      console.error("Error submitting application:", error);
+    }
   }
-
+  
   const postApplication = async (application) => {
     try {
       return await fetch("http://localhost:3000/applications", {

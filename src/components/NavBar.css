@@ -1,4 +1,10 @@
 
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
 .navbar-brand {
     font-size: 1.8rem;
     letter-spacing: 1px;
