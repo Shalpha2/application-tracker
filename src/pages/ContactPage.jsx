@@ -3,17 +3,61 @@ import NavBar from "../components/NavBar";
 
 function ContactPage() {
   return (
-    <div className="p-4">
-        <NavBar/>
-      <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-      <form className="space-y-4">
-        <input className="w-full p-2 border" type="text" placeholder="Your Name" required />
-        <input className="w-full p-2 border" type="email" placeholder="Your Email" required />
-        <textarea className="w-full p-2 border" rows="4" placeholder="Your Message" required />
-        <button className="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Send</button>
-      </form>
+    <div className="bg-light min-vh-100 py-5">
+      <NavBar />
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-8 col-lg-6">
+            <div className="card shadow">
+              <div className="card-body p-5">
+                <h2 className="text-center mb-4 text-primary">Contact Us</h2>
+                <form>
+                  <div className="mb-3">
+                    <label className="form-label">Your Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Your Email</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="form-label">Your Message</label>
+                    <textarea
+                      className="form-control"
+                      rows="4"
+                      placeholder="Type your message here"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" className="btn btn-primary w-100">
+                    Send Message
+                  </button>
+                </form>
+
+                <div className="text-center mt-4 text-muted">
+                  Or email us directly at{" "}
+                  <span className="text-decoration-underline text-primary">
+                    contact@jobtracker.com
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default ContactPage;
+
