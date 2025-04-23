@@ -4,6 +4,7 @@ import './App.css';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationList from './components/ApplicationList';
 import NavBar from "./components/NavBar";
+import Hero from './components/Hero';
 import { useState , useEffect} from 'react';
 function App() {
  
@@ -26,11 +27,14 @@ function App() {
   return (
     <div className="container mt-4">
       <NavBar/>
-      <h1 className="text-center mb-4">Job Application Tracker</h1>
+      <Hero />
+      <h4 className="text-center mb-3 fw-bold display-6 text-primary">
+  <i className="bi bi-briefcase-fill me-2"></i>Job Application Tracker
+</h4>
       <div className="row">
         <ApplicationForm setApplications={setApplications} />
         <div className="col">
-          <h2 className="mb-3">Saved Applications</h2>
+          <h3 className="mb-3">Saved Applications</h3>
           <ApplicationList applications={applications} 
           setApplications={setApplications}
            search={search}  

@@ -44,8 +44,6 @@ export default function ApplicationList({ applications, setApplications, search,
      app.company?.toLowerCase().includes(search.toLowerCase()) ||
      app.status?.toLowerCase().includes(search.toLowerCase()))
   );
-  
-  
 
   const handleEditClick = (app) => {
     setEditId(app.id);
@@ -56,9 +54,9 @@ export default function ApplicationList({ applications, setApplications, search,
     <div className="row mt-4">
       <SearchBar search={search} setSearch={setSearch} />
       {filteredApps.map((app) => (
-        <div key={app.id} className="col-md-4 mb-4">
-          <div className="card shadow-sm">
-            <div className="card-body">
+        <div key={app.id} className="col-md-4 mb-4 d-flex align-items-stretch">
+  <div className="card shadow-sm w-100 h-100" style={{ backgroundColor: "#e9f5fc" }}>
+    <div className="card-body text-dark d-flex flex-column justify-content-between">
               {editId === app.id ? (
                 <>
                   <input
@@ -106,12 +104,15 @@ export default function ApplicationList({ applications, setApplications, search,
                       </>
                     )}
                   </p>
-                  <button className="btn btn-sm btn-outline-primary me-2" onClick={() => handleEditClick(app)}>
-                    Edit
-                  </button>
-                  <button className="btn btn-sm btn-outline-danger" onClick={() => handleRemove(app.id)}>
-                    Delete
-                  </button>
+                  <div className="d-flex gap-2 mt-3">
+  <button className="btn btn-sm btn-outline-primary" onClick={() => handleEditClick(app)}>
+    Edit
+  </button>
+  <button className="btn btn-sm btn-outline-danger" onClick={() => handleRemove(app.id)}>
+    Delete
+  </button>
+</div>
+
                 </>
               )}
             </div>
@@ -121,3 +122,4 @@ export default function ApplicationList({ applications, setApplications, search,
     </div>
   );
 }
+
