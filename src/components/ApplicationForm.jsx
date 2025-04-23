@@ -13,7 +13,7 @@ export default function ApplicationForm({ setApplications }) {
   
     try {
       const response = await postApplication(formData);
-      const newApp = await response.json(); // Get the newly created application with id
+      const newApp = await response.json(); 
       setApplications((prev) => [...prev, newApp]);
   
       setFormData({
