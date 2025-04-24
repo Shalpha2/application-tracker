@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
+import { useNavigate } from 'react-router-dom';
 
 export default function ApplicationList({ applications, setApplications, search, setSearch }) {
   const [editId, setEditId] = useState(null);
   const [editData, setEditData] = useState({ title: '', company: '', status: '', notes: '' });
+  const navigate = useNavigate();
 
   async function handleRemove(id) {
     try {
@@ -55,7 +57,12 @@ export default function ApplicationList({ applications, setApplications, search,
       <SearchBar search={search} setSearch={setSearch} />
       {filteredApps.map((app) => (
         <div key={app.id} className="col-md-4 mb-4 d-flex align-items-stretch">
-  <div className="card shadow-sm w-100 h-100" style={{ backgroundColor: "#e9f5fc" }}>
+<div
+  className="card shadow-sm w-100 h-100 cursor-pointer"
+  style={{ backgroundColor: "#e9f5fc" }}
+  onClick={() => navigate(`/application/${app.id}`, { state: app })}
+>
+
     <div className="card-body text-dark d-flex flex-column justify-content-between">
               {editId === app.id ? (
                 <>

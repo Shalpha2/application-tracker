@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from './pages/About';
 import ProfilePage from "./pages/ProfilePage";
 import ContactPage from "./pages/ContactPage";
+import Application from './components/Application';
 const router = createBrowserRouter([
   {
 path : "/",
@@ -23,6 +24,10 @@ element: <ProfilePage/>
 path : "/contact",
 element : <ContactPage/>
 },
+{
+  path:"/application/:id" ,
+  element:<Application />  
+}
 
 ])
 const root = ReactDOM.createRoot(document.getElementById("root"));

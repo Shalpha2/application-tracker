@@ -28,13 +28,13 @@ function App() {
     <div className="container mt-4">
       <NavBar/>
       <Hero />
-      <h4 className="text-center mb-3 fw-bold display-6 text-primary">
+      <h5 className="text-center mb-3  display-6 text-primary">
   <i className="bi bi-briefcase-fill me-2"></i>Job Application Tracker
-</h4>
+</h5>
       <div className="row">
         <ApplicationForm setApplications={setApplications} />
         <div className="col">
-          <h3 className="mb-3">Saved Applications</h3>
+          <h4 className="mb-3">Saved Applications</h4>
           <ApplicationList applications={applications} 
           setApplications={setApplications}
            search={search}  
