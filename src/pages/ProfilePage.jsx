@@ -20,8 +20,8 @@ function ProfilePage() {
             </h2>
           </div>
           <ul className="list-group list-group-flush mb-3">
-            <li className="list-group-item"><strong>Name:</strong> Jane Doe</li>
-            <li className="list-group-item"><strong>Email:</strong> janedoe@example.com</li>
+            <li className="list-group-item"><strong>Name:</strong> Shadrack kiprono</li>
+            <li className="list-group-item"><strong>Email:</strong> kipronoshadrack@gmail.com</li>
             <li className="list-group-item"><strong>Role:</strong> Frontend Developer</li>
             <li className="list-group-item">
               <strong>Skills:</strong> React, JavaScript, Tailwind CSS
